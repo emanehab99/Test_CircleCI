@@ -34,7 +34,8 @@ jobs:
             if test -f "$FILE"; then
               echo "$FILE exists."
               exit 0
-            exit 1
+            else
+              exit 1
 
 workflows:
   First:
