@@ -16,12 +16,17 @@ jobs:
 
       - run:
           name: Run application
+
           command:
             python main.py
       - run:
           name: Check output file generated
-          command: |
-            pwd
+          command:
+            python main.py
+
+      - run:
+          name: Check output file generated
+          command: 
             ls -alt files
             FILE=$(pwd)/files/output.txt
             if test -f "$FILE"; then
@@ -30,6 +35,6 @@ jobs:
             exit 1
 
 workflows:
-  sample:
+  First:
     jobs:
       - build-and-test
