@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.5.0
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/python:3.6
+
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+          pip-dependency-file: requirements.txt
+
+      - run:
+          name: Run application
+          command: |
+            python main.py
+      - run:
+          name: Check output file generated
+          command: |
+            ls -alt files
+
+workflows:
+  sample:
+    jobs:
+      build-and-test
