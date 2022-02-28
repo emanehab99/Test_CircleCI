@@ -29,10 +29,11 @@ jobs:
           command: 
             ls -alt files
             FILE=$(pwd)/files/output.txt
-            if test -f "$FILE"; then
-              echo "$FILE exists."
-              exit 0
-            exit 1
+            echo $File
+#            if test -f "$FILE"; then
+#              echo "$FILE exists."
+#              exit 0
+#            exit 1
 
 workflows:
   First:
