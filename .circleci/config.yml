@@ -31,11 +31,7 @@ jobs:
             ls -alt files 
             FILE="$(pwd)/files/output.txt" 
             echo "$File"
-            if test -f "$FILE"; then
-              echo "$FILE exists."
-              exit 0
-            else
-              exit 1
+            [[ -f "$FILE" ]] || exit 1
 
 workflows:
   First:
