@@ -26,9 +26,10 @@ jobs:
 
       - run:
           name: Check output file generated
-          command: >
-            ls -alt files && 
-            FILE=$(pwd)/files/output.txt &&
+          command:
+            pwd
+            ls -alt files 
+            FILE=$(pwd)/files/output.txt 
             echo "$File"
 #            if test -f "$FILE"; then
 #              echo "$FILE exists."
