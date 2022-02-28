@@ -16,11 +16,11 @@ jobs:
 
       - run:
           name: Run application
-          command: |
+          command: 
             python main.py
       - run:
           name: Check output file generated
-          command: |
+          command: 
             ls -alt files
 
 workflows:
