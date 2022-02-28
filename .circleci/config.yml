@@ -27,8 +27,8 @@ jobs:
       - run:
           name: Check output file generated
           command: |
-            pwd
-            ls -alt files 
+#            pwd
+#            ls -alt files
             FILE="$(pwd)/files/output.txt" 
             if [ ! -f "$FILE" ]; then
               echo "Output file $FILE wasnt generated!!"

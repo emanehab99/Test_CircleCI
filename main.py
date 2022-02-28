@@ -16,10 +16,10 @@ if __name__ == '__main__':
     print(data.Login.unique())
     print(f'Total usage: {data.Used.sum()}')
 
-    # with open('files/output.txt', 'w') as f:
-    #     f.write(f'Shape: {data.shape}\n')
-    #     f.write(f'Active Users: {len(data.Login.unique())}\n')
-    #     f.writelines(f'Total usage: {data.Used.sum()}')
-    #     f.close()
+    with open('files/output.txt', 'w') as f:
+        f.write(f'Shape: {data.shape}\n')
+        f.write(f'Active Users: {len(data.Login.unique())}\n')
+        f.writelines(f'Total usage: {data.Used.sum()}')
+        f.close()
 
 
