@@ -31,7 +31,7 @@ jobs:
             ls -alt files 
             FILE="$(pwd)/files/output.txt" 
             echo "$File"
-            [[ -f "$FILE" ]] || exit 1
+            [[ -f "$FILE" ]] || [[ echo "output wasn't generated" && exit 1 ]]
 
 workflows:
   First:
