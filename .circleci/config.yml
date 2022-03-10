@@ -7,8 +7,11 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.6
+      - environment:
+          FOO: EMEM
 
     steps:
+      - run: sh -c env
       - checkout
       - python/install-packages:
           pkg-manager: pip
@@ -17,10 +20,6 @@ jobs:
       - run:
           name: Run application
 
-          command:
-            python main.py
-      - run:
-          name: Check output file generated
           command:
             python main.py
 
